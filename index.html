@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Merch Artwork Generator — apophenia.news</title>
+  <meta name="description" content="Print-ready front and back artwork for apophenia.news merch." />
+  <meta name="theme-color" content="#15151b" />
+  <link rel="icon" type="image/svg+xml" href="https://apophenia.news/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <header>
+    <div class="shell bar">
+      <h1>Merch Artwork Generator</h1>
+      <a href="https://apophenia.news" target="_blank" rel="noopener">apophenia.news &rarr;</a>
+    </div>
+  </header>
+
+  <main class="shell">
+    <section class="panel controls">
+      <label>
+        <span>Garment</span>
+        <select id="variant">
+          <option value="dark" selected>Dark (Black / Sport Grey)</option>
+          <option value="light">Light (White / Ash)</option>
+        </select>
+      </label>
+      <label>
+        <span>Export DPI</span>
+        <select id="dpi">
+          <option value="150">150 — proof only</option>
+          <option value="300" selected>300 — recommended</option>
+          <option value="600">600 — heavy, desktop only</option>
+        </select>
+      </label>
+      <label class="check">
+        <input type="checkbox" id="guides" />
+        <span>Show bounding guides (preview only)</span>
+      </label>
+      <p id="status" class="status">Loading fonts&hellip;</p>
+    </section>
+
+    <section class="panel">
+      <div class="head">
+        <div>
+          <h2>Front &mdash; left chest</h2>
+          <p class="meta">4.00&Prime; &times; 1.13&Prime; &middot; logo mark + wordmark</p>
+        </div>
+        <div class="actions">
+          <button data-dl="front" data-fmt="png">Download PNG</button>
+          <button data-dl="front" data-fmt="svg" class="ghost">SVG</button>
+        </div>
+      </div>
+      <div class="stage" id="stage-front"></div>
+    </section>
+
+    <section class="panel">
+      <div class="head">
+        <div>
+          <h2>Back &mdash; center</h2>
+          <p class="meta">11.00&Prime; &times; 7.00&Prime; &middot; constellation + tagline</p>
+        </div>
+        <div class="actions">
+          <button data-dl="back" data-fmt="png">Download PNG</button>
+          <button data-dl="back" data-fmt="svg" class="ghost">SVG</button>
+        </div>
+      </div>
+      <div class="stage" id="stage-back"></div>
+    </section>
+
+    <section class="panel specs">
+      <h2>Fourthwall upload specs</h2>
+      <ul>
+        <li><strong>Method:</strong> Printed &rarr; <strong>DTFx</strong> (not &ldquo;Choose for me&rdquo;).</li>
+        <li><strong>Files:</strong> transparent PNG, 300&nbsp;DPI, sRGB. No background layer.</li>
+        <li><strong>Front placement:</strong> left chest, 4&Prime; wide, top edge ~3&Prime; below collar seam.</li>
+        <li><strong>Back placement:</strong> center, 11&Prime; wide, top edge ~4&Prime; below collar seam.</li>
+        <li><strong>Anomaly:</strong> one node in the back constellation is an open ring, not a filled dot. Intentional. Do not &ldquo;fix&rdquo; it.</li>
+        <li><strong>Before listing:</strong> order one black unit to yourself and inspect the DTFx film edge.</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <div class="shell">Apophenia News &mdash; finding patterns in the noise since 2026</div>
+  </footer>
+
+  <script type="module" src="./app.js"></script>
+</body>
+</html>
